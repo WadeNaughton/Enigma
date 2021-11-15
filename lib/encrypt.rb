@@ -2,17 +2,17 @@ require './enigma'
 require 'date'
 
 enigma = Enigma.new
-file_1 = File.open(ARGV[0], "r")
+message = File.open(ARGV[0], "r")
 
-incoming_text = file_1.read
-file_1.close
+test = message.read
+message.close
 
-example = enigma.encrypt('hello world')
+example = enigma.encrypt(test.strip)
 
 writer = File.open(ARGV[1], "w")
 
-writer.write(example)
+test1 = writer.write(example[:encryption])
 
 writer.close
 
-p "Created 'encrypted.txt' with the key #{enigma.generate_key} and date #{enigma.generate_date}"
+p "Created 'encrypted.txt' with the key #{example[:key]} and date #{example[:date]}"

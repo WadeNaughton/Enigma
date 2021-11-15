@@ -4,7 +4,7 @@ class Enigma
 
   def initialize
     @characters = ("a".."z").to_a << " "
-    @date = Time.now.strftime("%m%d%y")
+    @date = Time.now.strftime("%d%m%y")
   end
 
   def generate_key
@@ -43,7 +43,10 @@ class Enigma
     empty_array = []
 
     message_split.each_with_index do |value, index|
-      if index % 4 == 0
+      value.downcase!
+      if !@characters.include?(value) == true
+        empty_array << value
+      elsif index % 4 == 0
         first_shift = @characters.index(value) + a_shift
         empty_array << @characters[first_shift % 27]
 
@@ -62,7 +65,7 @@ class Enigma
       end
     end
     message = empty_array.join("")
-    encrypt_hash.merge!(key: key, date: date, message: message)
+    encrypt_hash.merge!(key: key, date: date, encryption: message)
   end
 
   def decrypt(encryption, key = generate_key, date = generate_date)
@@ -89,11 +92,13 @@ class Enigma
     d_shift = d_key + d_offset
 
     message_split = encryption.split(//)
-
     empty_array = []
 
     message_split.each_with_index do |value, index|
-      if index % 4 == 0
+      value.downcase!
+      if !@characters.include?(value) == true
+        empty_array << value
+      elsif index % 4 == 0
         first_shift = @characters.index(value) - a_shift
         empty_array << @characters[first_shift % 27]
 
@@ -112,7 +117,7 @@ class Enigma
       end
     end
     message = empty_array.join("")
-    encrypt_hash.merge!(key: key, date: date, message: message)
+    encrypt_hash.merge!(key: key, date: date, decryption: message)
 
   end
 
