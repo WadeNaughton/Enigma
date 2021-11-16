@@ -23,20 +23,16 @@ class Enigma
     c_key = key.slice(2..3).to_i
     d_key = key.slice(3..4).to_i
 
-
     date_squared = date.to_i ** 2
     date_split = date_squared.to_s.split(//)
     date_split_slice = date_split.slice(6..9)
-    a_offset = date_split_slice[0].to_i
-    b_offset = date_split_slice[1].to_i
-    c_offset = date_split_slice[2].to_i
-    d_offset = date_split_slice[3].to_i
 
+    offset = date_split_slice.map {|num| num.to_i}
 
-    a_shift = a_key + a_offset
-    b_shift = b_key + b_offset
-    c_shift = c_key + c_offset
-    d_shift = d_key + d_offset
+    a_shift = a_key + offset[0]
+    b_shift = b_key + offset[1]
+    c_shift = c_key + offset[2]
+    d_shift = d_key + offset[3]
 
     message_split = encryption.split(//)
 
@@ -76,18 +72,15 @@ class Enigma
     c_key = key.slice(2..3).to_i
     d_key = key.slice(3..4).to_i
 
-
     date_squared = date.to_i ** 2
     date_split = date_squared.to_s.split(//)
     date_split_slice = date_split.slice(6..9)
-    a_offset = date_split_slice[0].to_i
-    b_offset = date_split_slice[1].to_i
-    c_offset = date_split_slice[2].to_i
-    d_offset = date_split_slice[3].to_i
-    a_shift = a_key + a_offset
-    b_shift = b_key + b_offset
-    c_shift = c_key + c_offset
-    d_shift = d_key + d_offset
+    offset = date_split_slice.map {|num| num.to_i}
+
+    a_shift = a_key + offset[0]
+    b_shift = b_key + offset[1]
+    c_shift = c_key + offset[2]
+    d_shift = d_key + offset[3]
 
     message_split = encryption.split(//)
     empty_array = []
