@@ -1,8 +1,6 @@
+require_relative './spec_helper'
 require 'date'
 require './lib/enigma'
-require 'spec_helper'
-require 'simplecov'
-SimpleCov.start
 
 RSpec.describe Enigma do
   it "exists" do
@@ -10,10 +8,10 @@ RSpec.describe Enigma do
     expect(enigma).to be_instance_of(Enigma)
   end
 
-  # it "generate_key" do
-  #   enigma = Enigma.new
-  #   expect(enigma.generate_key).to be_instance_of("1")
-  # end
+  it "has key generator" do
+    enigma = Enigma.new
+    expect(enigma.generate_key).to be_instance_of(String)
+  end
 
   it "has date" do
     enigma = Enigma.new
@@ -46,7 +44,7 @@ RSpec.describe Enigma do
   it "decrypts with special characters" do
     enigma = Enigma.new
     expected = {decryption: "hello world!", key: "02715", date: "040895"}
-    
+
     expect(enigma.decrypt("keder ohulw!", "02715", "040895")).to eq(expected)
   end
 

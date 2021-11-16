@@ -1,14 +1,15 @@
 class Enigma
 
-  attr_reader :characters, :date
+  attr_reader :characters, :date, :key
 
   def initialize
     @characters = ("a".."z").to_a << " "
     @date = Time.now.strftime("%d%m%y")
+    @key = rand(99999).to_s.rjust(5, "0")
   end
 
   def generate_key
-    key = rand(99999).to_s.rjust(5, "0")
+    @key
   end
 
   def generate_date
