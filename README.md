@@ -2,7 +2,7 @@
 
 1. Functionality
 
-  -My Encypt and Decrypt classes were implemented succesfully. These classes were used in my encrypt.rb file succesfully.
+  - My Encypt and Decrypt classes were implemented succesfully. These classes were used in my encrypt.rb file succesfully.
   
 2. Object Oriented Programming
 
@@ -15,9 +15,9 @@
 4. Test Driven Development
 
   - My project was completed using TDD throughout. My coverage metrics are at 100% for this project.
-  -
+  
 5. Version Control
 
-  -I completed my project using two branches. One, for the actual coding of the project, and the other for reconfiguring the work and refactoring the code. I did not do a good job on commiting my work though.
+  - I completed my project using two branches. One, for the actual coding of the project, and the other for reconfiguring the work and refactoring the code. I did not do a good job on commiting my work though.
   
 - Overall, I would say that this would be a passing project because I followed the guidelines and submitted a working project. I faltered on some of the version control, but made up for that with solid code.
