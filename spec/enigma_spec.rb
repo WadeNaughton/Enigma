@@ -34,6 +34,13 @@ RSpec.describe Enigma do
     expect(enigma.encrypt("hello world!", "02715", "040895")).to eq(expected)
   end
 
+  it "encrypts with lower case values" do
+    enigma = Enigma.new
+    expected = {encryption: "keder ohulw", key: "02715", date: "040895"}
+
+    expect(enigma.encrypt("Hello world", "02715", "040895")).to eq(expected)
+  end
+
   it "decrypts" do
     enigma = Enigma.new
     expected = {decryption: "hello world", key: "02715", date: "040895"}
@@ -52,7 +59,7 @@ RSpec.describe Enigma do
     enigma = Enigma.new
     expected = {decryption: "hello world!", key: "02715", date: "040895"}
 
-    expect(enigma.decrypt("KED ohulw!", "02715", "040895")).to eq(expected)
+    expect(enigma.decrypt("KEDER ohulw!", "02715", "040895")).to eq(expected)
   end
 
 end
