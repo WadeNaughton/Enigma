@@ -69,4 +69,12 @@ RSpec.describe Enigma do
     expect(enigma.decrypt("KEDER ohulw!", "02715", "040895")).to eq(expected)
   end
 
+
+    it "decrypts with todays date" do
+      enigma = Enigma.new
+      expected = {decryption: "hello world", key: "02715", date: "161121"}
+      encrypted = enigma.encrypt("hello world", "02715")
+      expect(enigma.decrypt(encrypted[:encryption],"02715")).to eq(expected)
+    end
+
 end
