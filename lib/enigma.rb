@@ -92,15 +92,12 @@ class Enigma
       elsif index % 4 == 0
         first_shift = @characters.index(value) - a_shift
         empty_array << @characters[first_shift % 27]
-
       elsif index % 4 == 1
         second_shift = @characters.index(value) - b_shift
         empty_array << @characters[second_shift % 27]
-
       elsif index % 4 == 2
         third_shift = @characters.index(value) - c_shift
         empty_array << @characters[third_shift % 27]
-
       elsif index % 4 == 3
         fourth_shift = @characters.index(value) - d_shift
         empty_array << @characters[fourth_shift % 27]
@@ -110,5 +107,4 @@ class Enigma
     encrypt_hash.merge!(key: key, date: date, decryption: message)
 
   end
-
 end
