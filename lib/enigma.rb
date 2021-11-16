@@ -25,13 +25,13 @@ class Enigma
 
 
     date_squared = date.to_i ** 2
-    date_string = date_squared.to_s
-    date_split = date_string.split(//)
+    date_split = date_squared.to_s.split(//)
     date_split_slice = date_split.slice(6..9)
     a_offset = date_split_slice[0].to_i
     b_offset = date_split_slice[1].to_i
     c_offset = date_split_slice[2].to_i
     d_offset = date_split_slice[3].to_i
+
 
     a_shift = a_key + a_offset
     b_shift = b_key + b_offset
@@ -78,8 +78,7 @@ class Enigma
 
 
     date_squared = date.to_i ** 2
-    date_string = date_squared.to_s
-    date_split = date_string.split(//)
+    date_split = date_squared.to_s.split(//)
     date_split_slice = date_split.slice(6..9)
     a_offset = date_split_slice[0].to_i
     b_offset = date_split_slice[1].to_i
