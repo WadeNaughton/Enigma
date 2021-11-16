@@ -34,6 +34,13 @@ RSpec.describe Enigma do
     expect(enigma.encrypt("hello world!", "02715", "040895")).to eq(expected)
   end
 
+  it "encrypts with todays date" do
+    enigma = Enigma.new
+    expected = {:key=>"02715", :date=>"161121", :encryption=>"qkhdxfsg r "}
+
+    expect(enigma.encrypt("hello world", "02715")).to eq(expected)
+  end
+
   it "encrypts with lower case values" do
     enigma = Enigma.new
     expected = {encryption: "keder ohulw", key: "02715", date: "040895"}
