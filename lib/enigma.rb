@@ -58,7 +58,6 @@ class Enigma
       elsif index % 4 == 3
         fourth_shift = @characters.index(value) + d_shift
         empty_array << @characters[fourth_shift % 27]
-
       end
     end
     message = empty_array.join("")
@@ -105,7 +104,6 @@ class Enigma
       elsif index % 4 == 3
         fourth_shift = @characters.index(value) - d_shift
         empty_array << @characters[fourth_shift % 27]
-
       end
     end
     message = empty_array.join("")
