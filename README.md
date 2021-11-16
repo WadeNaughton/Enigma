@@ -21,3 +21,6 @@
   - I completed my project using two branches. One, for the actual coding of the project, and the other for reconfiguring the work and refactoring the code. I did not do a good job on commiting my work though.
   
 - Overall, I would say that this would be a passing project because I followed the guidelines and submitted a working project. I faltered on some of the version control, but made up for that with solid code.
+
+
+https://www.youtube.com/watch?v=aiot_Xbb0ys
