@@ -14,7 +14,7 @@
   
 4. Test Driven Development
 
-  - My project was completed using TDD throughout. My coverage metrics are at 100% for this project.
+  - My project was completed using TDD throughout. I used the tests to guide my code creations. My coverage metrics are at 100% for this project.
   
 5. Version Control
 
