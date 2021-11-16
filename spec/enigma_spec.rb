@@ -19,6 +19,12 @@ RSpec.describe Enigma do
     expect(enigma.generate_date).to eq(date)
   end
 
+  it "has character set" do
+    enigma = Enigma.new
+    characters = ("a".."z").to_a << " "
+    expect(enigma.characters.count). to eq(27)
+  end
+
   it "encrypts" do
     enigma = Enigma.new
     expected = {encryption: "keder ohulw", key: "02715", date: "040895"}
